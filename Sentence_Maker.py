@@ -1,6 +1,9 @@
 import random
 import string
 
+keepPunc = False
+keepNums = False
+
 contents = []
 print("Enter some sample text (press enter then Ctrl-D to exit): ", end="")
 while True:
@@ -18,10 +21,12 @@ for i in range(0,len(contents)):
 punctuationTranslationMap = str.maketrans('', '', string.punctuation)
 extraMap = str.maketrans(' ',' ',"“”‘’")
 numMap = str.maketrans('','',"0123456789")
+if keepPunc == False:
+    inputString = inputString.translate(punctuationTranslationMap)
+    inputString = inputString.translate(extraMap)
 
-inputString = inputString.translate(punctuationTranslationMap)
-inputString = inputString.translate(extraMap)
-inputString = inputString.translate(numMap)
+if keepNums == False:
+    inputString = inputString.translate(numMap)
 inputString = inputString.replace("  "," ")
 inputString = inputString.replace("   "," ")
 
