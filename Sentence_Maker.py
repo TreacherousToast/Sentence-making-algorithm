@@ -3,6 +3,7 @@ import string
 
 keepPunc = False
 keepNums = False
+keepCase = False
 
 contents = []
 print("Enter some sample text (press enter then Ctrl-D to exit): ", end="")
@@ -30,7 +31,11 @@ if keepNums == False:
 inputString = inputString.replace("  "," ")
 inputString = inputString.replace("   "," ")
 
-inputArr = inputString.lower().split(" ")
+if keepCase == False:
+    inputArr = inputString.lower().split(" ")
+else:
+    inputArr = inputString.split(" ")
+   
 words = []
 followerWords = []
 followerWordNum = []
