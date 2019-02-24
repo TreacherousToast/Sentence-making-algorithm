@@ -20,11 +20,9 @@ inputString = ""
 for i in range(0,len(contents)):
     inputString = inputString + contents[i]
 punctuationTranslationMap = str.maketrans('', '', string.punctuation)
-extraMap = str.maketrans(' ',' ',"“”‘’")
 numMap = str.maketrans('','',"0123456789")
 if keepPunc == False:
     inputString = inputString.translate(punctuationTranslationMap)
-    inputString = inputString.translate(extraMap)
 
 if keepNums == False:
     inputString = inputString.translate(numMap)
