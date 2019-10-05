@@ -63,7 +63,7 @@ while True in repeat:
     followerWordNum.pop(index)
     repeat.pop(index)
     
-sentenceLen = int(input("Enter how long you want the sentence to be: "))
+sentenceLen = int(input("Enter how many words you want in the sentence: "))
 sentence = [words[random.randint(0,len(words))]]
 usedIndices = []
 
