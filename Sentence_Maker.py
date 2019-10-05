@@ -74,7 +74,10 @@ for i in range(1,sentenceLen):
         if words[j] == sentence[i-1] and followerWordNum[j] > currMax and j not in usedIndices:
             currMaxIndex = j
             currMax = followerWordNum[j]
-
+    
+    if sentence[len(sentence)-1] == followerWords[currMaxIndex]:
+        break
+    
     sentence.append(followerWords[currMaxIndex])
     usedIndices.append(currMaxIndex)
 
